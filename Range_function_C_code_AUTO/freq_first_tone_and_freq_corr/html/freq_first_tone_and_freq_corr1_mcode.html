@@ -1,0 +1,18 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> [ <span class="var type1" id="S2T1U3">f</span> ] = freq_first_tone_and_freq_corr( <span class="var type1" id="S3T2U6">FftS</span>, <span class="var type1" id="S4T1U7">FftL</span>, <span class="var type1" id="S5T1U8">Fd</span> )</span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2"> 2</a></span><span class="line"><span class="comment">%UNTITLED11 Summary of this function goes here</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3"> 3</a></span><span class="line"><span class="comment">%   Detailed explanation goes here</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4"> 4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5"> 5</a></span><span class="line">[<span class="var type1" id="S6T1U12">Am</span>,<span class="var type1" id="S7T1U13">im</span>]=max(<span class="var type1" id="S3T2U16">FftS</span>); <span class="comment">% maximum in the spectrum , where Am is the amplitude of the match , im is the index in the array FftS starting from 1 and not from 0</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,6" id="srcline6"> 6</a></span><span class="line"><span class="mxinfo " id="T1:U8"><span class="var type1" id="S2T1U19">f</span>=<span class="mxinfo " id="T1:U10"><span class="mxinfo " id="T1:U11">(<span class="mxinfo " id="T1:U12"><span class="var type1" id="S7T1U24">im</span>-<span class="mxinfo " id="T1:U14">1</span></span>)*<span class="var type1" id="S5T1U26">Fd</span></span>/<span class="var type1" id="S4T1U27">FftL</span></span></span>;  <span class="comment">% calculating the frequency of the first tone, im-1 because i starts at 1 and not at 0</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,7" id="srcline7"> 7</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,8" id="srcline8"> 8</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,9" id="srcline9"> 9</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,10" id="srcline10">10</a></span><span class="line"></span></span>
+</pre>
+</body>
+</html>
