@@ -2,7 +2,7 @@
  * File: calculation_amplitude_phase_vector_method.h
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 08-May-2023 13:56:17
+ * C/C++ source code generated on  : 08-May-2023 14:46:01
  */
 
 #ifndef CALCULATION_AMPLITUDE_PHASE_VECTOR_METHOD_H
