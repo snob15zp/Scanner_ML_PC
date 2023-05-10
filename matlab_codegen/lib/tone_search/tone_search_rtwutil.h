@@ -2,7 +2,7 @@
  * File: tone_search_rtwutil.h
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 10-May-2023 13:37:04
+ * C/C++ source code generated on  : 10-May-2023 18:06:46
  */
 
 #ifndef TONE_SEARCH_RTWUTIL_H
