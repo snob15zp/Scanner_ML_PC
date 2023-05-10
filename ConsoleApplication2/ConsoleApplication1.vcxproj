@@ -156,6 +156,7 @@
     <ClInclude Include="rtwtypes.h" />
     <ClInclude Include="rt_nonfinite.h" />
     <ClInclude Include="sind.h" />
+    <ClInclude Include="tmwtypes.h" />
     <ClInclude Include="tone_search.h" />
     <ClInclude Include="tone_search_data.h" />
     <ClInclude Include="tone_search_emxAPI.h" />

@@ -2,7 +2,7 @@
 ## Makefile generated for component 'tone_search'. 
 ## 
 ## Makefile     : tone_search_rtw.mk
-## Generated on : Wed May 10 13:37:28 2023
+## Generated on : Wed May 10 17:27:38 2023
 ## Final product: ./tone_search.lib
 ## Product type : static-library
 ## 
@@ -21,10 +21,10 @@
 
 PRODUCT_NAME              = tone_search
 MAKEFILE                  = tone_search_rtw.mk
-MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2021b1
-MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2021b1/bin
+MATLAB_ROOT               = D:/PROGRA~1/MATLAB/R2021b
+MATLAB_BIN                = D:/PROGRA~1/MATLAB/R2021b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = D:/user/DROPBO~2/ZERDLA~1/Nsel/GIT/Scanner/SCANNE~1/matlab
+START_DIR                 = D:/User/DROPBO~1/ZERDLA~1/Nsel/GIT/Scanner/SCANNE~1/matlab
 TGT_FCN_LIB               = ISO_C
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

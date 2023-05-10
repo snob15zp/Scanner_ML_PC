@@ -116,5 +116,8 @@
     <ClInclude Include="examples\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tmwtypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
