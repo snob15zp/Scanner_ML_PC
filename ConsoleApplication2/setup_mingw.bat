@@ -1,0 +1,2 @@
+set "MINGW_ROOT=D:\Qt\QT512~1.12\Tools\MINGW7~2\bin"
+@set "PATH=%PATH%;%MINGW_ROOT%"
