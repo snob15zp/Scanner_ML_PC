@@ -1,18 +1,10 @@
-clear all           % очистка памяти
-    %% Параметры неизменные (заданные заказчиком)
-Tm=1;               % длительность измеряемого сигнала (с)
-Fd=2500000;         % частота дискретизации (Гц)
-mz=20;              % множитель зеро падинга - ограничен быстродействием компьютера заказчика
-    %% Входной сигнал (генерим , или загрузим из файла)
-FftL=Tm*Fd*mz;                  % количество выборок FFT
-T=0:1/Fd:Tm;                    % массив отсчетов времени
-[ An ] = tone_gener( T );       % генерация матрицы входного сигнала c:\Users\Admin\Documents\MATLAB\Signal.txt 
-Signal=readmatrix('Signal.txt'); % загрузить матрицу входного сигнала c:\Users\Admin\Documents\MATLAB\Signal.txt
-Am=1;a=0;f=0;p=0;               % начальные присвоения для входа в цикл поиска тонов
-while Am>1E-4 % если амплитуда удалённого тона больше заданного порога , то ищем и удаляем следующий тон
-    [ Signal, FftS, Am, a, f, p ] = tone_search( Tm, Fd, mz, FftL, T, Signal, a, f, p ); % функция поиска и удаление тонов
-    if coder.target('MATLAB')   % если будет генерация в си код , то следущее генерить не нужно
-        disp([a, f-3E5, p]); % результат поиска тона : амплитуда , разность от центральной частоты , фаза
-        [ F ] = tone_graph( T, Signal, Fd, mz, FftL, FftS ); % функция построения графиков
-    end
+function [ Out ] = main_scanner( Tm, Fd, mz, FftL, T, Signal ) % scanner function
+    Am=1;a=0;f=0;p=0;i=0;           % initial assignments to enter the search and subtract tone loop
+        %% The main cycle of searching and subtracting the tone of maximum amplitude
+    while Am>1E-4                   % if the amplitude of the subtraction is greater than the specified threshold , then we look for and subtract the next tone
+        [ Signal, FftS, Am, a, f, p ] = tone_search( Tm, Fd, mz, FftL, T, Signal, a, f, p ); % tone search and subtraction function
+        i=i+1;Out(1,i)=a;Out(2,i)=f;Out(3,i)=p; % fill the output array : amplitude , frequency , phase
+        if coder.target('MATLAB')   % if there is a generation in C code, then the following does not need to be generated
+%            disp([i]);              % subtracted tone counter
+%            [ F ] = tone_graph( T, Signal, Fd, mz, FftL, FftS ); % plotting function
 end

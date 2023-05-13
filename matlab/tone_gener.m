@@ -1,20 +1,13 @@
-function [ An ] = tone_gener( T )   % функция генерации сигнала из разных тонов
-        %% Параметры изменяемые (входной сигнал)
-    Ak=0;                           % Постоянная составляющая
-    % A1=1;                           % Амплитуда первого тона
-    % A2=1E-5;                        % Амплитуда второго тона
-    % F1=300000;                      % Частота первго тона (Гц)
-    % F2=300001;                      % Частота второго тона (Гц)
-    % P1=234;                         % Начальная фаза первого тона (Градусов)
-    % P2=345;                         % Начальная фаза второго тона (Градусов)
-    A=[1 1E-2 1E-2 1E-2 1E-2];      % массив амплитуд
-    F=[300000 300001 300002 300003 300004]; % массив частот
-    P=[0 99 111 222 333];           % массив фаз
-    An=7E-5;                        % амплитуда шума
-        %% Генерация рабочих массивов (входного сигнала)
-    Signal=Ak+An*randn(1,length(T)); % массив случайного шума длиной равной массиву времени
+function [ An ] = tone_gener( T )   % signal generation function from different tones
+        %% Parameters changeable (input signal)
+    A=[1 1E-2 1E-2 1E-2 1E-2];      % amplitude array
+    F=[300000 300001 300002 300003 300004]; % frequency array
+    P=[0 77 111 222 333];           % phase array
+    An=7E-5;                        % noise amplitude
+        %% Generation of working arrays (input signal)
+    Signal=An*randn(1,length(T));   % random noise array with length equal to time array
     for i=1:length(F)
-        Signal=Signal+A(i)*sind((F(i)*360).*T+P(i)); % накопление массива сигнала
+        Signal=Signal+A(i)*sind((F(i)*360).*T+P(i)); % signal array accumulation
     end
-    writematrix(Signal,'Signal.txt'); % запись матрицы сигнала в файл
+    writematrix(Signal,'Signal.txt'); % writing signal matrix to file
 end

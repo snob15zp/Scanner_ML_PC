@@ -1,18 +1,18 @@
-function [ F ] = tone_graph( T, Signal, Fd, mz, FftL, FftS ) % функция построения графиков
-        %% Построение графиков
-%     %-------------------------------- Сигнал
-%     figure                          % Создаем новое окно
-%     plot(T,Signal);                 % рисуем ...
-%     xlim([0 0.00003]);              % интервал по времени на оси Х
-%     title('Сигнал');                % Подпись графика
-%     xlabel('Время (с)');            % Подпись оси х графика
-%     ylabel('Амплитуда');            % Подпись оси у графика
-    %-------------------------------- Спектр
-    figure                          % Создаем новое окно
-    F=0:Fd/FftL:Fd/2;               % Массив частот вычисляемого спектра
-    stem(F,mz*FftS(1:length(F)),'k.'); % рисуем ...
-    xlim([299990 300010]);          % интервал по частоте на оси Х
-    title('Спектр');                % Подпись графика
-    xlabel('Частота (Гц)');         % Подпись оси Х графика
-    ylabel('Амплитуда');            % Подпись оси У графика
+function [ F ] = tone_graph( T, Signal, Fd, mz, FftL, FftS ) % plotting function
+        %% Plotting
+     %-------------------------------- Signal
+%     figure                          % Create a new window
+%     plot(T,Signal);                 % draw...
+%     xlim([0 0.00003]);              % time interval on the x-axis
+%     title('Signal');                % Graph caption
+%     xlabel('Second');               % Plot x-axis label
+%     ylabel('V');                    % Chart axis label
+    %-------------------------------- Range
+    figure                          % Create a new window
+    F=0:Fd/FftL:Fd/2;               % Array of frequencies of the calculated spectrum
+    stem(F,mz*FftS(1:length(F)),'k.'); % draw...
+    xlim([299990 300010]);          % X-axis frequency interval
+    title('Spectrum');              % Graph caption
+    xlabel('Hz');                   % Plot x-axis label
+    ylabel('V');             	    % Chart y-axis label
 end
