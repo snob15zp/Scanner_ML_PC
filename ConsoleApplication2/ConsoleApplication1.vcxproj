@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\matlab_codegen\lib\main_scanner\examples\main.cpp" />
     <ClCompile Include="cosd.c" />
     <ClCompile Include="fft.c" />
     <ClCompile Include="FFTImplementationCallback.c" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="main_scanner.c" />
     <ClCompile Include="main_scanner_data.c" />
     <ClCompile Include="main_scanner_emxutil.c" />
@@ -37,7 +37,6 @@
     <ClCompile Include="tone_search.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\matlab_codegen\lib\main_scanner\examples\main.h" />
     <ClInclude Include="cosd.h" />
     <ClInclude Include="fft.h" />
     <ClInclude Include="FFTImplementationCallback.h" />

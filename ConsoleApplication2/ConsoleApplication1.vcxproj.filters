@@ -60,7 +60,7 @@
     <ClCompile Include="tone_search.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\matlab_codegen\lib\main_scanner\examples\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -118,9 +118,6 @@
     </ClInclude>
     <ClInclude Include="tmwtypes.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\matlab_codegen\lib\main_scanner\examples\main.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
