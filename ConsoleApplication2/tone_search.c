@@ -2,18 +2,19 @@
  * File: tone_search.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 10-May-2023 13:37:04
+ * C/C++ source code generated on  : 14-May-2023 01:58:12
  */
 
 /* Include Files */
 #include "tone_search.h"
 #include "cosd.h"
 #include "fft.h"
+#include "main_scanner_emxutil.h"
+#include "main_scanner_rtwutil.h"
+#include "main_scanner_types.h"
+#include "mean.h"
 #include "rt_nonfinite.h"
 #include "sind.h"
-#include "tone_search_emxutil.h"
-#include "tone_search_rtwutil.h"
-#include "tone_search_types.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
@@ -45,7 +46,7 @@ static double rt_hypotd_snf(double u0, double u1)
 }
 
 /*
- * функция поиска и удаления тонов
+ * search and delete tones function
  *
  * Arguments    : double Tm
  *                double Fd
@@ -65,11 +66,13 @@ void tone_search(double Tm, double Fd, double mz, double FftL,
                  double *f, double *p, emxArray_real_T *FftS, double *Am)
 {
   emxArray_creal_T *x;
+  emxArray_real_T *b_FftS;
+  emxArray_real_T *c_FftS;
   creal_T *x_data;
   double A[4];
   double B[2];
-  double a21;
   double absx;
+  double cc;
   double d;
   double ex;
   double ff;
@@ -78,62 +81,62 @@ void tone_search(double Tm, double Fd, double mz, double FftL,
   double yc;
   double ys;
   double *FftS_data;
+  double *b_FftS_data;
   int i;
   int k;
   int last;
   int nx;
   signed char n;
   boolean_T exitg1;
-  (void)mz;
   *f *= 360.0;
   for (k = 0; k < 2500001; k++) {
     d = *f * T[k] + *p;
     if (rtIsInf(d) || rtIsNaN(d)) {
       d = rtNaN;
     } else {
-      a21 = rt_remd_snf(d, 360.0);
-      absx = fabs(a21);
+      hf = rt_remd_snf(d, 360.0);
+      absx = fabs(hf);
       if (absx > 180.0) {
-        if (a21 > 0.0) {
-          a21 -= 360.0;
+        if (hf > 0.0) {
+          hf -= 360.0;
         } else {
-          a21 += 360.0;
+          hf += 360.0;
         }
-        absx = fabs(a21);
+        absx = fabs(hf);
       }
       if (absx <= 45.0) {
-        a21 *= 0.017453292519943295;
+        hf *= 0.017453292519943295;
         n = 0;
       } else if (absx <= 135.0) {
-        if (a21 > 0.0) {
-          a21 = 0.017453292519943295 * (a21 - 90.0);
+        if (hf > 0.0) {
+          hf = 0.017453292519943295 * (hf - 90.0);
           n = 1;
         } else {
-          a21 = 0.017453292519943295 * (a21 + 90.0);
+          hf = 0.017453292519943295 * (hf + 90.0);
           n = -1;
         }
-      } else if (a21 > 0.0) {
-        a21 = 0.017453292519943295 * (a21 - 180.0);
+      } else if (hf > 0.0) {
+        hf = 0.017453292519943295 * (hf - 180.0);
         n = 2;
       } else {
-        a21 = 0.017453292519943295 * (a21 + 180.0);
+        hf = 0.017453292519943295 * (hf + 180.0);
         n = -2;
       }
       if (n == 0) {
-        d = sin(a21);
+        d = sin(hf);
       } else if (n == 1) {
-        d = cos(a21);
+        d = cos(hf);
       } else if (n == -1) {
-        d = -cos(a21);
+        d = -cos(hf);
       } else {
-        d = -sin(a21);
+        d = -sin(hf);
       }
     }
     Signal[k] -= *a * d;
   }
   emxInit_creal_T(&x, 2);
-  /*  вычисляем разностный сигнал */
-  /*          %% Спектральное представление входного сигнала */
+  /*  calculate the difference signal */
+  /*         %% Spectral representation of the input signal */
   fft(Signal, FftL, x);
   x_data = x->data;
   nx = x->size[1];
@@ -146,19 +149,17 @@ void tone_search(double Tm, double Fd, double mz, double FftL,
     FftS_data[k] = rt_hypotd_snf(x_data[k].re, x_data[k].im);
   }
   emxFree_creal_T(&x);
-  /*  амплитуды преобразования Фурье сигнала */
+  /*  signal Fourier transform amplitude */
   i = FftS->size[0] * FftS->size[1];
   FftS->size[0] = 1;
   emxEnsureCapacity_real_T(FftS, i);
   FftS_data = FftS->data;
-  nx = FftS->size[1] - 1;
-  for (i = 0; i <= nx; i++) {
+  last = FftS->size[1] - 1;
+  for (i = 0; i <= last; i++) {
     FftS_data[i] = 2.0 * FftS_data[i] / FftL;
   }
-  /*  нормировка спектра по амплитуде */
-  /* FftS(1)=FftS(1)/2;              % нормировка постоянной составляющей в
-   * спектре */
-  /*         %% Поиск частоты тона и вычисление */
+  /*  amplitude normalization of the spectrum */
+  /*         %% Tone frequency search and calculation */
   last = FftS->size[1];
   if (FftS->size[1] <= 2) {
     if (FftS->size[1] == 1) {
@@ -204,119 +205,146 @@ void tone_search(double Tm, double Fd, double mz, double FftL,
       }
     }
   }
-  /*  максимум в спектре , где Am - амплитуда спички , im - индекс в массиве
-   * FftS начиная с 1 а не с 0 */
+  /*  maximum in the spectrum , where Am is the amplitude of the match , im is
+   * the index in the array FftS starting from 1 and not from 0 */
   *f = ((double)nx - 1.0) * Fd / FftL;
-  /*  вычисление частоты тона , im-1 потому что i начинается с 1 а не с 0 */
-  /*         %% Аппроксимация частоты вычета по максимуму вектора */
+  /*  calculating the tone frequency, im-1 because i starts at 1 and not at 0 */
+  /*         %% Approximation of the residue frequency by the maximum of the
+   * vector */
   hf = 0.01;
   ff = 0.0;
-  /*  шаг и точность оптимизированы на быстродействие , отклонение ff сбросить
-   */
+  /*  step and error optimized for speed, deviation ff reset */
   while (fabs(hf) > 1.0E-6) {
-    /*  если шаг не дошол до оптимальной точности , то */
+    /*  if the step did not reach the optimal error, then */
     *f += hf;
-    /*  частоту инкрементируем на шаг  */
-    a21 = 0.0;
+    /*  frequency is incremented by a step */
+    absx = 0.0;
     ss = 0.0;
-    /*  начальные присвоения суммам */
+    /*  initial assignments to amounts */
     i = (int)(Tm * Fd + 1.0);
     for (nx = 0; nx < i; nx++) {
-      /*  количество индексов массива времени Tm*Fd+1 */
+      /*  number of time array indexes Tm*Fd+1 */
       d = *f * 360.0 * (double)nx / Fd;
-      absx = d;
-      b_cosd(&absx);
-      a21 += Signal[nx] * absx;
-      /*  первая сумма вектора */
+      cc = d;
+      b_cosd(&cc);
+      absx += Signal[nx] * cc;
+      /*  the first sum of the vector */
       b_sind(&d);
       ss += Signal[nx] * d;
-      /*  вторая сумма вектора */
+      /*  second vector sum */
     }
-    a21 = a21 * a21 + ss * ss;
-    /*  функция отклонения - сумма квадратов сумм вектора */
-    if (a21 < ff) {
-      /*  если проскочили максимальное значение , то */
+    absx = absx * absx + ss * ss;
+    /*  variance function - sum of squares of vector sums */
+    if (absx < ff) {
+      /*  if the maximum value is skipped, then */
       hf = -hf / 2.0;
-      /*  деление на 2 и разворот шага в обратную сторону */
+      /*  dividing by 2 and reversing the step in the opposite direction */
     }
-    ff = a21;
-    /*  прошлая сумма равна текущей */
+    ff = absx;
+    /*  the past sum is equal to the current one */
   }
-  /*  конец аппроксимации по частоте */
-  /*         %% Расчёт амплитуды и фазы по векторному методу , при условии
-   * известной частоты */
-  hf = 0.0;
+  /*  end of approximation in frequency */
+  /*         %% Calculation of the amplitude and phase of the residue by the
+   * vector method, provided that the frequency is known */
   ff = 0.0;
+  cc = 0.0;
   ss = 0.0;
   yc = 0.0;
   ys = 0.0;
-  /*  начальные присвоения суммам */
+  /*  initial assignments to amounts */
   i = (int)(Fd * Tm + 1.0);
   for (nx = 0; nx < i; nx++) {
-    /*  количество индексов массива времени */
+    /*  number of time array indexes */
     d = *f * 720.0 * (double)nx / Fd;
     b_sind(&d);
-    hf += d / 2.0;
-    /*  упрощение cos(x)*sin(x)=sin(2*x)/2 */
-    a21 = *f * 360.0 * (double)nx / Fd;
-    absx = a21;
-    b_cosd(&absx);
-    ff += absx * absx;
-    /*  время начинается с нуля , */
-    *a = a21;
+    ff += d / 2.0;
+    /*  simplification cos(x)*sin(x)=sin(2*x)/2 */
+    absx = *f * 360.0 * (double)nx / Fd;
+    hf = absx;
+    b_cosd(&hf);
+    cc += hf * hf;
+    /*  time starts from zero, */
+    *a = absx;
     b_sind(a);
     ss += *a * *a;
-    /*  а индекс начинается с единицы */
-    yc += Signal[nx] * absx;
-    /*  поэтому в синусах и косинусах стоит i */
-    b_sind(&a21);
-    ys += Signal[nx] * a21;
-    /*  а в сигнале стоит индекс i+1 */
+    /*  and the index starts from one */
+    yc += Signal[nx] * hf;
+    /*  so in sines and cosines is i */
+    b_sind(&absx);
+    ys += Signal[nx] * absx;
+    /*  and the signal contains the index i + 1 */
   }
-  /*  конец накопления сумм для матрицы */
-  A[0] = ff;
-  A[2] = hf;
-  A[1] = hf;
+  /*  end of accumulation of sums for the matrix */
+  A[0] = cc;
+  A[2] = ff;
+  A[1] = ff;
   A[3] = ss;
-  /*  решение системы линейных уравнений (СЛУ) */
-  /*  присвоение сумм матрице А */
+  /*  solution of a system of linear equations */
+  /*  assigning sums to matrix A */
   B[0] = yc;
   B[1] = ys;
-  /*  присвоение сумм матрице В */
-  if (fabs(hf) > fabs(ff)) {
+  /*  assign sums to matrix B */
+  if (fabs(ff) > fabs(cc)) {
     nx = 1;
     last = 0;
   } else {
     nx = 0;
     last = 1;
   }
-  a21 = A[last] / A[nx];
-  absx = A[nx + 2];
-  hf = (B[last] - B[nx] * a21) / (A[last + 2] - a21 * absx);
-  a21 = (B[nx] - hf * absx) / A[nx];
-  /*  вектор решения СЛУ */
-  /* (mean(FftS(1:299990*mz))+mean(FftS(300050*mz:Fd*mz/2)))/2; % средняя
-   * амплитуда шума */
-  *a = sqrt(a21 * a21 + hf * hf);
-  /*  амплитуда сигнала вычета */
-  absx = a21 / hf;
-  if (a21 < 0.0) {
-    a21 = -1.0;
-  } else if (a21 > 0.0) {
-    a21 = 1.0;
-  } else if (a21 == 0.0) {
-    a21 = 0.0;
+  absx = A[last] / A[nx];
+  hf = A[nx + 2];
+  ff = (B[last] - B[nx] * absx) / (A[last + 2] - absx * hf);
+  absx = (B[nx] - ff * hf) / A[nx];
+  /*  solution vector */
+  d = 299990.0 * mz;
+  if (1.0 > d) {
+    last = 0;
+  } else {
+    last = (int)d;
   }
-  if (hf < 0.0) {
+  d = 300050.0 * mz;
+  cc = Fd * mz / 2.0;
+  if (d > cc) {
+    i = 0;
+    nx = 0;
+  } else {
+    i = (int)d - 1;
+    nx = (int)cc;
+  }
+  emxInit_real_T(&b_FftS);
+  /*  average noise amplitude */
+  k = b_FftS->size[0] * b_FftS->size[1];
+  b_FftS->size[0] = 1;
+  b_FftS->size[1] = last;
+  emxEnsureCapacity_real_T(b_FftS, k);
+  b_FftS_data = b_FftS->data;
+  for (k = 0; k < last; k++) {
+    b_FftS_data[k] = FftS_data[k];
+  }
+  emxInit_real_T(&c_FftS);
+  k = c_FftS->size[0] * c_FftS->size[1];
+  c_FftS->size[0] = 1;
+  last = nx - i;
+  c_FftS->size[1] = last;
+  emxEnsureCapacity_real_T(c_FftS, k);
+  b_FftS_data = c_FftS->data;
+  for (nx = 0; nx < last; nx++) {
+    b_FftS_data[nx] = FftS_data[i + nx];
+  }
+  *a = sqrt(absx * absx + ff * ff) - (mean(b_FftS) + mean(c_FftS)) / 2.0;
+  /*  subtraction signal amplitude */
+  hf = absx;
+  emxFree_real_T(&c_FftS);
+  emxFree_real_T(&b_FftS);
+  if (absx < 0.0) {
     hf = -1.0;
-  } else if (hf > 0.0) {
+  } else if (absx > 0.0) {
     hf = 1.0;
-  } else if (hf == 0.0) {
+  } else if (absx == 0.0) {
     hf = 0.0;
   }
-  *p = a21 * (57.295779513082323 * acos(hf / sqrt(absx * absx + 1.0)) - 180.0) +
-       180.0;
-  /*  фаза сигнала вычета 0...360 */
+  *p = 90.0 * (2.0 - hf) - 57.295779513082323 * atan(1.0 / (absx / ff));
+  /*  subtraction signal phase 0...360 */
   *Am = ex;
 }
 

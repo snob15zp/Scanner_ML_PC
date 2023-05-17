@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cosd.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -25,6 +22,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FFTImplementationCallback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_scanner.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_scanner_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_scanner_emxutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_scanner_initialize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_scanner_rtwutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_scanner_terminate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mean.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="rt_nonfinite.c">
@@ -42,25 +60,7 @@
     <ClCompile Include="tone_search.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tone_search_data.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tone_search_emxAPI.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tone_search_emxutil.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tone_search_initialize.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tone_search_rtwutil.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tone_search_terminate.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="examples\main.c">
+    <ClCompile Include="..\matlab_codegen\lib\main_scanner\examples\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,6 +72,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FFTImplementationCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_scanner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_scanner_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_scanner_emxutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_scanner_initialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_scanner_rtwutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_scanner_terminate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_scanner_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="rt_nonfinite.h">
@@ -92,32 +116,11 @@
     <ClInclude Include="tone_search.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tone_search_data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tone_search_emxAPI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tone_search_emxutil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tone_search_initialize.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tone_search_rtwutil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tone_search_terminate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tone_search_types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="examples\main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="tmwtypes.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\matlab_codegen\lib\main_scanner\examples\main.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
  * File: rtwtypes.h
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 10-May-2023 13:37:04
+ * C/C++ source code generated on  : 14-May-2023 01:58:12
  */
 
 #ifndef RTWTYPES_H
@@ -35,7 +35,7 @@
 #endif
 
 /* Include Files */
-#include "tmwtypes.h" //tmwtypes.h
+#include "tmwtypes.h"
 
 #endif
 /*

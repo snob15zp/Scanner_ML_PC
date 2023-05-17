@@ -2,14 +2,14 @@
  * File: FFTImplementationCallback.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 10-May-2023 13:37:04
+ * C/C++ source code generated on  : 14-May-2023 01:58:12
  */
 
 /* Include Files */
 #include "FFTImplementationCallback.h"
+#include "main_scanner_emxutil.h"
+#include "main_scanner_types.h"
 #include "rt_nonfinite.h"
-#include "tone_search_emxutil.h"
-#include "tone_search_types.h"
 #include <math.h>
 
 /* Function Declarations */
@@ -247,7 +247,7 @@ static void d_FFTImplementationCallback_doH(
     tst = false;
     ju = 2500000;
   }
-  emxInit_real_T(&costab1q, 2);
+  emxInit_real_T(&costab1q);
   if (ju > nRows) {
     ju = nRows;
   }
@@ -269,8 +269,8 @@ static void d_FFTImplementationCallback_doH(
   for (k = istart; k <= nd2; k++) {
     costab1q_data[k] = sin(temp_im * (double)(j - k));
   }
-  emxInit_real_T(&b_costab, 2);
-  emxInit_real_T(&b_sintab, 2);
+  emxInit_real_T(&b_costab);
+  emxInit_real_T(&b_sintab);
   costab1q_data[j] = 0.0;
   j = costab1q->size[1] - 1;
   nd2 = (costab1q->size[1] - 1) << 1;
@@ -295,9 +295,9 @@ static void d_FFTImplementationCallback_doH(
     b_costab_data[k] = -costab1q_data[nd2 - k];
     b_sintab_data[k] = -costab1q_data[k - j];
   }
-  emxInit_real_T(&hsintab, 2);
-  emxInit_real_T(&hcostabinv, 2);
-  emxInit_real_T(&hsintabinv, 2);
+  emxInit_real_T(&hsintab);
+  emxInit_real_T(&hcostabinv);
+  emxInit_real_T(&hsintabinv);
   hszCostab = costab->size[1] / 2;
   istart = costab1q->size[0] * costab1q->size[1];
   costab1q->size[0] = 1;
@@ -598,8 +598,8 @@ void c_FFTImplementationCallback_doH(const double x[2500001],
   sintab_data = sintab->data;
   costab_data = costab->data;
   y_data = y->data;
-  emxInit_real_T(&hcostab, 2);
-  emxInit_real_T(&hsintab, 2);
+  emxInit_real_T(&hcostab);
+  emxInit_real_T(&hsintab);
   nRows = unsigned_nRows / 2;
   istart = y->size[0];
   if (istart > nRows) {

@@ -2,7 +2,7 @@
  * File: main.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 10-May-2023 13:37:04
+ * C/C++ source code generated on  : 14-May-2023 01:58:12
  */
 
 /*************************************************************************/
@@ -32,11 +32,9 @@
 
 /* Include Files */
 #include "main.h"
+#include "main_scanner.h"
+#include "main_scanner_terminate.h"
 #include "rt_nonfinite.h"
-#include "tone_search.h"
-#include "tone_search_emxAPI.h"
-#include "tone_search_terminate.h"
-#include "tone_search_types.h"
 #include <string.h>
 
 /* Function Declarations */
@@ -44,7 +42,7 @@ static void argInit_1x2500001_real_T(double result[2500001]);
 
 static double argInit_real_T(void);
 
-static void main_tone_search(void);
+static void main_main_scanner(void);
 
 /* Function Definitions */
 /*
@@ -75,30 +73,20 @@ static double argInit_real_T(void)
  * Arguments    : void
  * Return Type  : void
  */
-static void main_tone_search(void)
+static void main_main_scanner(void)
 {
   static double T_tmp[2500001];
   static double b_T_tmp[2500001];
-  emxArray_real_T *FftS;
-  double Am;
+  double Out[300];
   double Tm_tmp;
-  double a;
-  double f;
-  double p;
-  emxInitArray_real_T(&FftS, 2);
-  /* Initialize function 'tone_search' input arguments. */
+  /* Initialize function 'main_scanner' input arguments. */
   Tm_tmp = argInit_real_T();
   /* Initialize function input argument 'T'. */
   argInit_1x2500001_real_T(T_tmp);
   /* Initialize function input argument 'Signal'. */
-  /* Call the entry-point 'tone_search'. */
-  a = Tm_tmp;
-  f = Tm_tmp;
-  p = Tm_tmp;
+  /* Call the entry-point 'main_scanner'. */
   memcpy(&b_T_tmp[0], &T_tmp[0], 2500001U * sizeof(double));
-  tone_search(Tm_tmp, Tm_tmp, Tm_tmp, Tm_tmp, b_T_tmp, T_tmp, &a, &f, &p, FftS,
-              &Am);
-  emxDestroyArray_real_T(FftS);
+  main_scanner(Tm_tmp, Tm_tmp, Tm_tmp, Tm_tmp, T_tmp, b_T_tmp, Out);
 }
 
 /*
@@ -114,10 +102,10 @@ int main(int argc, char **argv)
    * function. So, a call to initialize is not included here. */
   /* Invoke the entry-point functions.
 You can call entry-point functions multiple times. */
-  main_tone_search();
+  main_main_scanner();
   /* Terminate the application.
 You do not need to do this more than one time. */
-  tone_search_terminate();
+  main_scanner_terminate();
   return 0;
 }
 
