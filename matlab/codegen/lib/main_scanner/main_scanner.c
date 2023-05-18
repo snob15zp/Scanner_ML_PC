@@ -2,7 +2,7 @@
  * File: main_scanner.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 14-May-2023 01:58:12
+ * C/C++ source code generated on  : 18-May-2023 15:36:56
  */
 
 /* Include Files */
@@ -24,18 +24,21 @@
  *                const double T[2500001]
  *                double Signal[2500001]
  *                double Out[300]
+ *                emxArray_real_T *FftS
  * Return Type  : void
  */
 void main_scanner(double Tm, double Fd, double mz, double FftL,
                   const double T[2500001], double Signal[2500001],
-                  double Out[300])
+                  double Out[300], emxArray_real_T *FftS)
 {
-  emxArray_real_T *FftS;
   double Am;
   double a;
   double f;
   double p;
+  double *FftS_data;
+  int b_i;
   int i;
+  int loop_ub_tmp;
   Am = 1.0;
   a = 0.0;
   f = 0.0;
@@ -43,10 +46,18 @@ void main_scanner(double Tm, double Fd, double mz, double FftL,
   i = -1;
   /*  initial assignments to enter the search and subtract tone loop */
   memset(&Out[0], 0, 300U * sizeof(double));
+  b_i = FftS->size[0] * FftS->size[1];
+  FftS->size[0] = 1;
+  loop_ub_tmp = (int)FftL;
+  FftS->size[1] = (int)FftL;
+  emxEnsureCapacity_real_T(FftS, b_i);
+  FftS_data = FftS->data;
+  for (b_i = 0; b_i < loop_ub_tmp; b_i++) {
+    FftS_data[b_i] = 0.0;
+  }
   /*         %% The main cycle of searching and subtracting the tone of maximum
    * amplitude */
-  emxInit_real_T(&FftS);
-  while (Am > 0.0001) {
+  while (Am > 0.001) {
     /*  if the amplitude of the subtraction is greater than the specified
      * threshold , then we look for and subtract the next tone */
     tone_search(Tm, Fd, mz, FftL, T, Signal, &a, &f, &p, FftS, &Am);
@@ -57,7 +68,6 @@ void main_scanner(double Tm, double Fd, double mz, double FftL,
     Out[3 * i + 2] = p;
     /*  fill the output array : amplitude , frequency , phase */
   }
-  emxFree_real_T(&FftS);
 }
 
 /*

@@ -2,7 +2,7 @@
  * File: fft.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 14-May-2023 01:58:12
+ * C/C++ source code generated on  : 18-May-2023 15:36:56
  */
 
 /* Include Files */
@@ -93,7 +93,7 @@ void fft(const double x[2500001], double varargin_1, emxArray_creal_T *y)
       }
       pmax = pmin;
     }
-    emxInit_real_T(&costab1q);
+    emxInit_real_T(&costab1q, 2);
     temp_im = 6.2831853071795862 / (double)pmax;
     j = pmax / 2 / 2;
     pow2p = costab1q->size[0] * costab1q->size[1];
@@ -112,9 +112,9 @@ void fft(const double x[2500001], double varargin_1, emxArray_creal_T *y)
       costab1q_data[k] = sin(temp_im * (double)(j - k));
     }
     costab1q_data[j] = 0.0;
-    emxInit_real_T(&costab);
-    emxInit_real_T(&sintab);
-    emxInit_real_T(&sintabinv);
+    emxInit_real_T(&costab, 2);
+    emxInit_real_T(&sintab, 2);
+    emxInit_real_T(&sintabinv, 2);
     if (!useRadix2) {
       j = costab1q->size[1] - 1;
       pmax = (costab1q->size[1] - 1) << 1;

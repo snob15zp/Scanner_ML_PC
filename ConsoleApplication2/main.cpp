@@ -5,25 +5,47 @@
 #include <vector>
 
 extern "C" {
-#include "tone_search.h"
+#include "main_scanner.h"
 }
 
-void main_scanner(double Tm, double Fd, double mz, double FftL,
+//void main_scanner(double Tm, double Fd, double mz, double FftL,
+//                  double T[2500001], double Signal[2500001])
+//{
+//  double Am = 1;
+//  double a = 0;
+//  double f = 0;
+//  double p = 0;
+//  int i = 0;
+//  emxArray_real_T FfTs;
+//  FfTs.size = new int[2];
+//  FfTs.data = nullptr;
+//
+//  while (Am > 0.0001) {
+//    tone_search(Tm, Fd, mz, FftL, T, Signal, &a, &f, &p, &FfTs, &Am);
+//    std::cout << i++ << "\t" << a << ", " << f << ", " << p << std::endl;
+//  }
+//}
+//extern void main_scanner(double Tm, double Fd, double mz, double FftL,
+//                         const double T[2500001], double Signal[2500001],
+//                         double Out[300], emxArray_real_T *FftS);
+static void main_main_scanner(double Tm, double Fd, double mz, double FftL,
                   double T[2500001], double Signal[2500001])
 {
-  double Am = 1;
-  double a = 0;
-  double f = 0;
-  double p = 0;
-  int i = 0;
-  emxArray_real_T FfTs;
-  FfTs.size = new int[2];
-  FfTs.data = nullptr;
-
-  while (Am > 0.0001) {
-    tone_search(Tm, Fd, mz, FftL, T, Signal, &a, &f, &p, &FfTs, &Am);
-    std::cout << i++ << "\t" << a << ", " << f << ", " << p << std::endl;
-  }
+  static double T_tmp[2500001];
+  static double b_T_tmp[2500001];
+  emxArray_real_T *FftS;
+  double Out[300];
+  double Tm_tmp;
+  emxInitArray_real_T(&FftS, 2);
+  /* Initialize function 'main_scanner' input arguments. */
+  Tm_tmp = argInit_real_T();
+  /* Initialize function input argument 'T'. */
+  argInit_1x2500001_real_T(T_tmp);
+  /* Initialize function input argument 'Signal'. */
+  /* Call the entry-point 'main_scanner'. */
+  memcpy(&b_T_tmp[0], &T_tmp[0], 2500001U * sizeof(double));
+  main_scanner(Tm, Fd, mz, FftL, T, Signal, Out, FftS);
+  emxDestroyArray_real_T(FftS);
 }
 
 int main(int argc, char **argv)
@@ -57,7 +79,7 @@ int main(int argc, char **argv)
 
   std::cout << "Data successfully read. Size - " << idx << std::endl;
 
-  main_scanner(Tm, Fd, mz, FftL, T, Signal);
+  main_main_scanner(Tm, Fd, mz, FftL, T, Signal);
 
   std::chrono::duration<double> duration =
       std::chrono::system_clock::now() - start;

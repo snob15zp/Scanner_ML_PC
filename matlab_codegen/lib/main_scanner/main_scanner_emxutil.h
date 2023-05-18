@@ -2,7 +2,7 @@
  * File: main_scanner_emxutil.h
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 14-May-2023 01:58:12
+ * C/C++ source code generated on  : 18-May-2023 15:36:56
  */
 
 #ifndef MAIN_SCANNER_EMXUTIL_H
@@ -35,7 +35,7 @@ extern void emxInit_creal_T(emxArray_creal_T **pEmxArray, int numDimensions);
 
 extern void emxInit_int32_T(emxArray_int32_T **pEmxArray, int numDimensions);
 
-extern void emxInit_real_T(emxArray_real_T **pEmxArray);
+extern void emxInit_real_T(emxArray_real_T **pEmxArray, int numDimensions);
 
 #ifdef __cplusplus
 }

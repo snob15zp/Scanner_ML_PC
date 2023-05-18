@@ -2,7 +2,7 @@
  * File: tone_search.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 14-May-2023 01:58:12
+ * C/C++ source code generated on  : 18-May-2023 15:36:56
  */
 
 /* Include Files */
@@ -311,7 +311,7 @@ void tone_search(double Tm, double Fd, double mz, double FftL,
     i = (int)d - 1;
     nx = (int)cc;
   }
-  emxInit_real_T(&b_FftS);
+  emxInit_real_T(&b_FftS, 2);
   /*  average noise amplitude */
   k = b_FftS->size[0] * b_FftS->size[1];
   b_FftS->size[0] = 1;
@@ -321,7 +321,7 @@ void tone_search(double Tm, double Fd, double mz, double FftL,
   for (k = 0; k < last; k++) {
     b_FftS_data[k] = FftS_data[k];
   }
-  emxInit_real_T(&c_FftS);
+  emxInit_real_T(&c_FftS, 2);
   k = c_FftS->size[0] * c_FftS->size[1];
   c_FftS->size[0] = 1;
   last = nx - i;

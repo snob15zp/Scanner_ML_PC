@@ -2,7 +2,7 @@
  * File: _coder_main_scanner_mex.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 14-May-2023 01:58:12
+ * C/C++ source code generated on  : 18-May-2023 15:36:56
  */
 
 /* Include Files */
@@ -42,12 +42,12 @@ emlrtCTX mexFunctionCreateRootTLS(void)
 
 /*
  * Arguments    : int32_T nlhs
- *                mxArray *plhs[1]
+ *                mxArray *plhs[2]
  *                int32_T nrhs
  *                const mxArray *prhs[6]
  * Return Type  : void
  */
-void unsafe_main_scanner_mexFunction(int32_T nlhs, mxArray *plhs[1],
+void unsafe_main_scanner_mexFunction(int32_T nlhs, mxArray *plhs[2],
                                      int32_T nrhs, const mxArray *prhs[6])
 {
   emlrtStack st = {
@@ -55,21 +55,27 @@ void unsafe_main_scanner_mexFunction(int32_T nlhs, mxArray *plhs[1],
       NULL, /* tls */
       NULL  /* prev */
   };
-  const mxArray *outputs;
+  const mxArray *outputs[2];
+  int32_T b_nlhs;
   st.tls = emlrtRootTLSGlobal;
   /* Check for proper number of arguments. */
   if (nrhs != 6) {
     emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:WrongNumberOfInputs", 5, 12, 6, 4,
                         12, "main_scanner");
   }
-  if (nlhs > 1) {
+  if (nlhs > 2) {
     emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:TooManyOutputArguments", 3, 4, 12,
                         "main_scanner");
   }
   /* Call the function. */
-  main_scanner_api(prhs, &outputs);
+  main_scanner_api(prhs, nlhs, outputs);
   /* Copy over outputs to the caller. */
-  emlrtReturnArrays(1, &plhs[0], &outputs);
+  if (nlhs < 1) {
+    b_nlhs = 1;
+  } else {
+    b_nlhs = nlhs;
+  }
+  emlrtReturnArrays(b_nlhs, &plhs[0], &outputs[0]);
 }
 
 /*

@@ -2,7 +2,7 @@
  * File: main.c
  *
  * MATLAB Coder version            : 5.3
- * C/C++ source code generated on  : 14-May-2023 01:58:12
+ * C/C++ source code generated on  : 18-May-2023 15:36:56
  */
 
 /*************************************************************************/
@@ -33,7 +33,9 @@
 /* Include Files */
 #include "main.h"
 #include "main_scanner.h"
+#include "main_scanner_emxAPI.h"
 #include "main_scanner_terminate.h"
+#include "main_scanner_types.h"
 #include "rt_nonfinite.h"
 #include <string.h>
 
@@ -77,8 +79,10 @@ static void main_main_scanner(void)
 {
   static double T_tmp[2500001];
   static double b_T_tmp[2500001];
+  emxArray_real_T *FftS;
   double Out[300];
   double Tm_tmp;
+  emxInitArray_real_T(&FftS, 2);
   /* Initialize function 'main_scanner' input arguments. */
   Tm_tmp = argInit_real_T();
   /* Initialize function input argument 'T'. */
@@ -86,7 +90,8 @@ static void main_main_scanner(void)
   /* Initialize function input argument 'Signal'. */
   /* Call the entry-point 'main_scanner'. */
   memcpy(&b_T_tmp[0], &T_tmp[0], 2500001U * sizeof(double));
-  main_scanner(Tm_tmp, Tm_tmp, Tm_tmp, Tm_tmp, T_tmp, b_T_tmp, Out);
+  main_scanner(Tm_tmp, Tm_tmp, Tm_tmp, Tm_tmp, T_tmp, b_T_tmp, Out, FftS);
+  emxDestroyArray_real_T(FftS);
 }
 
 /*
