@@ -6,6 +6,15 @@
 
 extern "C" {
 #include "main_scanner.h"
+//#include "main.h"
+#include "main_scanner.h"
+#include "main_scanner_emxAPI.h"
+#include "main_scanner_terminate.h"
+#include "main_scanner_types.h"
+#include "rt_nonfinite.h"
+#include "rtwtypes.h"
+#include <stddef.h>
+#include <stdlib.h>
 }
 
 //void main_scanner(double Tm, double Fd, double mz, double FftL,
@@ -28,6 +37,27 @@ extern "C" {
 //extern void main_scanner(double Tm, double Fd, double mz, double FftL,
 //                         const double T[2500001], double Signal[2500001],
 //                         double Out[300], emxArray_real_T *FftS);
+static double argInit_real_T(void)
+{
+  return 0.0;
+}
+static void argInit_1x2500001_real_T(double result[2500001])
+{
+  int idx1;
+  /* Loop over the array to initialize each element. */
+  for (idx1 = 0; idx1 < 2500001; idx1++) {
+    /* Set the value of the array element.
+Change this value to the value that the application requires. */
+    result[idx1] = argInit_real_T();
+  }
+}
+
+/*
+ * Arguments    : void
+ * Return Type  : double
+ */
+
+
 static void main_main_scanner(double Tm, double Fd, double mz, double FftL,
                   double T[2500001], double Signal[2500001])
 {

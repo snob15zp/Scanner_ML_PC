@@ -25,6 +25,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_scanner.c" />
     <ClCompile Include="main_scanner_data.c" />
+    <ClCompile Include="main_scanner_emxAPI.c" />
     <ClCompile Include="main_scanner_emxutil.c" />
     <ClCompile Include="main_scanner_initialize.c" />
     <ClCompile Include="main_scanner_rtwutil.c" />
@@ -42,6 +43,7 @@
     <ClInclude Include="FFTImplementationCallback.h" />
     <ClInclude Include="main_scanner.h" />
     <ClInclude Include="main_scanner_data.h" />
+    <ClInclude Include="main_scanner_emxAPI.h" />
     <ClInclude Include="main_scanner_emxutil.h" />
     <ClInclude Include="main_scanner_initialize.h" />
     <ClInclude Include="main_scanner_rtwutil.h" />
