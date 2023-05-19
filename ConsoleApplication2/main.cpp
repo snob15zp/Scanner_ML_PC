@@ -84,7 +84,7 @@ int main(int argc, char **argv)
 
   double Tm = 1;
   double Fd = 2500000;
-  double mz = 20;
+  double mz = 2;
   double FftL = Tm * Fd * mz;
 
   double *Signal = new double[2500001];
