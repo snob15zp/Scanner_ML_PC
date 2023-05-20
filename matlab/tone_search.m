@@ -34,7 +34,7 @@ function [ Signal, FftS, Am, a, f, p ] = tone_search( Tm, Fd, mz, FftL, T, Signa
        cs ss];                      % assigning sums to matrix A
     B=[yc; ys;];                    % assign sums to matrix B
     X=A\B;                          % solution vector
-    an=(mean(FftS(1:299990*mz))+mean(FftS(300050*mz:Fd*mz/2)))/2; % average noise amplitude
+    an=(mean(FftS(1:29999*mz))+mean(FftS(30005*mz:Fd*mz/2)))/2; % average noise amplitude
     a=sqrt(X(1)^2+X(2)^2)-an;       % subtraction signal amplitude
     p=90*(2-sign(X(1)))-acotd(X(1)/X(2)); % subtraction signal phase 0...360
 end

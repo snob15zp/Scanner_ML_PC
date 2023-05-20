@@ -10,4 +10,17 @@ function [ Out ,FftS] = main_scanner( Tm, Fd, mz, FftL, T, Signal ) % scanner fu
             disp([i]);              % subtracted tone counter
             [ F ] = tone_graph( T, Signal, Fd, mz, FftL, FftS ); % plotting function
         end
+
+        foldername='';
+        fn3='signal';
+        fn3a = sprintf('%i',int32(i));
+        fn3f = [fn3,fn3a,'.txt',0];
+        %coder.varsize('ActVal1',[qblobs,DmaxSize]);
+        %ActVal1(1:qblobs,:)=ActVal(1:qblobs,:);
+        if coder.target('MATLAB')
+            filesave_ceval(coder.ignoreSize(Signal),foldername,coder.ignoreSize(fn3f),size(Signal),0);
+        else
+            filesave_ceval(coder.ignoreSize(Signal),foldername,coder.ignoreSize(fn3f),size(Signal),1);
+        end
+
     end

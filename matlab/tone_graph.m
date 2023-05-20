@@ -11,7 +11,7 @@ function [ F ] = tone_graph( T, Signal, Fd, mz, FftL, FftS ) % plotting function
     figure                          % Create a new window
     F=0:Fd/FftL:Fd/2;               % Array of frequencies of the calculated spectrum
     stem(F,mz*FftS(1:length(F)),'k.'); % draw...
-    xlim([299990 300010]);          % X-axis frequency interval
+    xlim([29999 30001]);          % X-axis frequency interval
     title('Spectrum');              % Graph caption
     xlabel('Hz');                   % Plot x-axis label
     ylabel('V');             	    % Chart y-axis label

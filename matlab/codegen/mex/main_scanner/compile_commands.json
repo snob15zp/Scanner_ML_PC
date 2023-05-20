@@ -1,0 +1,134 @@
+[
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   \"D:/User/dropbox_nsel16zp/ZERDLab Dropbox/Nsel/GIT/Scanner/Scanner_ML_PC/matlab/filesave.cpp\" -o build/win64/filesave.o",
+    "file": "D:/User/dropbox_nsel16zp/ZERDLab Dropbox/Nsel/GIT/Scanner/Scanner_ML_PC/matlab/filesave.cpp",
+    "output": "build/win64/filesave.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   main_scanner_data.c -o build/win64/main_scanner_data.o",
+    "file": "main_scanner_data.c",
+    "output": "build/win64/main_scanner_data.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   rt_nonfinite.c -o build/win64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/win64/rt_nonfinite.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   main_scanner_initialize.c -o build/win64/main_scanner_initialize.o",
+    "file": "main_scanner_initialize.c",
+    "output": "build/win64/main_scanner_initialize.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   main_scanner_terminate.c -o build/win64/main_scanner_terminate.o",
+    "file": "main_scanner_terminate.c",
+    "output": "build/win64/main_scanner_terminate.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   main_scanner.c -o build/win64/main_scanner.o",
+    "file": "main_scanner.c",
+    "output": "build/win64/main_scanner.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   fft.c -o build/win64/fft.o",
+    "file": "fft.c",
+    "output": "build/win64/fft.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   mldivide.c -o build/win64/mldivide.o",
+    "file": "mldivide.c",
+    "output": "build/win64/mldivide.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   warning.c -o build/win64/warning.o",
+    "file": "warning.c",
+    "output": "build/win64/warning.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   mean.c -o build/win64/mean.o",
+    "file": "mean.c",
+    "output": "build/win64/mean.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   interface/_coder_main_scanner_api.c -o build/win64/_coder_main_scanner_api.o",
+    "file": "interface/_coder_main_scanner_api.c",
+    "output": "build/win64/_coder_main_scanner_api.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   interface/_coder_main_scanner_mex.c -o build/win64/_coder_main_scanner_mex.o",
+    "file": "interface/_coder_main_scanner_mex.c",
+    "output": "build/win64/_coder_main_scanner_mex.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   filesave_ceval.c -o build/win64/filesave_ceval.o",
+    "file": "filesave_ceval.c",
+    "output": "build/win64/filesave_ceval.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   eml_int_forloop_overflow_check.c -o build/win64/eml_int_forloop_overflow_check.o",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/win64/eml_int_forloop_overflow_check.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   sumMatrixIncludeNaN.c -o build/win64/sumMatrixIncludeNaN.o",
+    "file": "sumMatrixIncludeNaN.c",
+    "output": "build/win64/sumMatrixIncludeNaN.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   tone_search.c -o build/win64/tone_search.o",
+    "file": "tone_search.c",
+    "output": "build/win64/tone_search.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   sind.c -o build/win64/sind.o",
+    "file": "sind.c",
+    "output": "build/win64/sind.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   cosd.c -o build/win64/cosd.o",
+    "file": "cosd.c",
+    "output": "build/win64/cosd.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   main_scanner_emxutil.c -o build/win64/main_scanner_emxutil.o",
+    "file": "main_scanner_emxutil.c",
+    "output": "build/win64/main_scanner_emxutil.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   main_scanner_mexutil.c -o build/win64/main_scanner_mexutil.o",
+    "file": "main_scanner_mexutil.c",
+    "output": "build/win64/main_scanner_mexutil.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   interface/_coder_main_scanner_info.c -o build/win64/_coder_main_scanner_info.o",
+    "file": "interface/_coder_main_scanner_info.c",
+    "output": "build/win64/_coder_main_scanner_info.o"
+  },
+  {
+    "directory": "D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner",
+    "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\" -I \"D:\\User\\dropbox_nsel16zp\\ZERDLab Dropbox\\Nsel\\GIT\\Scanner\\Scanner_ML_PC\\matlab\\codegen\\mex\\main_scanner\\interface\" -I \"D:\\Program Files\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1   \"D:/Program Files/MATLAB/R2021b/extern/version/c_mexapi_version.c\" -o build/win64/c_mexapi_version.o",
+    "file": "D:/Program Files/MATLAB/R2021b/extern/version/c_mexapi_version.c",
+    "output": "build/win64/c_mexapi_version.o"
+  }
+]

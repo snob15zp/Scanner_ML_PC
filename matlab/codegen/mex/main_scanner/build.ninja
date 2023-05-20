@@ -1,0 +1,63 @@
+# CompilerName=mingw64
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/win64
+matlabdir = D:/Program Files/MATLAB/R2021b
+startdir = D:/User/dropbox_nsel16zp/ZERDLab Dropbox/Nsel/GIT/Scanner/Scanner_ML_PC/matlab
+
+# Toolchain information
+cc = C:\Qt\Tools\mingw1120_64\bin\gcc
+cxx = C:\Qt\Tools\mingw1120_64\bin\g++
+linker = C:\Qt\Tools\mingw1120_64\bin\gcc
+linkerxx = C:\Qt\Tools\mingw1120_64\bin\g++
+
+cflags =  -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I "D:\User\dropbox_nsel16zp\ZERDLab Dropbox\Nsel\GIT\Scanner\Scanner_ML_PC\matlab\codegen\mex\main_scanner" -I "D:\User\dropbox_nsel16zp\ZERDLab Dropbox\Nsel\GIT\Scanner\Scanner_ML_PC\matlab" -I "D:\User\dropbox_nsel16zp\ZERDLab Dropbox\Nsel\GIT\Scanner\Scanner_ML_PC\matlab\codegen\mex\main_scanner\interface" -I "D:\Program Files\MATLAB\R2021b\extern\include" -I "." -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1  
+
+cxxflags =  -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I "D:\User\dropbox_nsel16zp\ZERDLab Dropbox\Nsel\GIT\Scanner\Scanner_ML_PC\matlab\codegen\mex\main_scanner" -I "D:\User\dropbox_nsel16zp\ZERDLab Dropbox\Nsel\GIT\Scanner\Scanner_ML_PC\matlab" -I "D:\User\dropbox_nsel16zp\ZERDLab Dropbox\Nsel\GIT\Scanner\Scanner_ML_PC\matlab\codegen\mex\main_scanner\interface" -I "D:\Program Files\MATLAB\R2021b\extern\include" -I "." -DMODEL=main_scanner_mex -D__USE_MINGW_ANSI_STDIO=1  
+
+ldflags =  -m64 -Wl,--no-undefined -shared -static -L"D:\Program Files\MATLAB\R2021b\extern\lib\win64\mingw64" -llibmx -llibmex -llibmat -lm -llibmwlapack -llibmwblas -o "main_scanner_mex.mexw64" -llibemlrt -llibcovrt -llibut -llibmwmathutil  -Wl,--version-script,main_scanner_mex.map
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker @$out.rsp $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $ldflags
+
+# Build
+build $builddir/filesave.o : cxx $startdir/filesave.cpp
+build $builddir/main_scanner_data.o : cc $root/main_scanner_data.c
+build $builddir/rt_nonfinite.o : cc $root/rt_nonfinite.c
+build $builddir/main_scanner_initialize.o : cc $root/main_scanner_initialize.c
+build $builddir/main_scanner_terminate.o : cc $root/main_scanner_terminate.c
+build $builddir/main_scanner.o : cc $root/main_scanner.c
+build $builddir/fft.o : cc $root/fft.c
+build $builddir/mldivide.o : cc $root/mldivide.c
+build $builddir/warning.o : cc $root/warning.c
+build $builddir/mean.o : cc $root/mean.c
+build $builddir/_coder_main_scanner_api.o : cc $root/interface/_coder_main_scanner_api.c
+build $builddir/_coder_main_scanner_mex.o : cc $root/interface/_coder_main_scanner_mex.c
+build $builddir/filesave_ceval.o : cc $root/filesave_ceval.c
+build $builddir/eml_int_forloop_overflow_check.o : cc $root/eml_int_forloop_overflow_check.c
+build $builddir/sumMatrixIncludeNaN.o : cc $root/sumMatrixIncludeNaN.c
+build $builddir/tone_search.o : cc $root/tone_search.c
+build $builddir/sind.o : cc $root/sind.c
+build $builddir/cosd.o : cc $root/cosd.c
+build $builddir/main_scanner_emxutil.o : cc $root/main_scanner_emxutil.c
+build $builddir/main_scanner_mexutil.o : cc $root/main_scanner_mexutil.c
+build $builddir/_coder_main_scanner_info.o : cc $root/interface/_coder_main_scanner_info.c
+build $builddir/c_mexapi_version.o : cc $matlabdir/extern/version/c_mexapi_version.c
+
+# Link
+build $root\main_scanner_mex.mexw64 : linkxx $builddir/filesave.o $builddir/main_scanner_data.o $builddir/rt_nonfinite.o $builddir/main_scanner_initialize.o $builddir/main_scanner_terminate.o $builddir/main_scanner.o $builddir/fft.o $builddir/mldivide.o $builddir/warning.o $builddir/mean.o $builddir/_coder_main_scanner_api.o $builddir/_coder_main_scanner_mex.o $builddir/filesave_ceval.o $builddir/eml_int_forloop_overflow_check.o $builddir/sumMatrixIncludeNaN.o $builddir/tone_search.o $builddir/sind.o $builddir/cosd.o $builddir/main_scanner_emxutil.o $builddir/main_scanner_mexutil.o $builddir/_coder_main_scanner_info.o $builddir/c_mexapi_version.o 
