@@ -78,18 +78,26 @@ static void main_main_scanner(double Tm, double Fd, double mz, double FftL,
   emxDestroyArray_real_T(FftS);
 }
 
+#define D_Fd 250000
+
 int main(int argc, char **argv)
 {
   auto start = std::chrono::system_clock::now();
 
   double Tm = 1;
-  double Fd = 2500000;
+  double Fd = D_Fd;
   double mz = 2;
   double FftL = Tm * Fd * mz;
 
-  double *Signal = new double[2500001];
-  double *T = new double[2500001];
-  std::fill_n(T, 2500001, 1 / Fd);
+  double *Signal = new double[D_Fd+1];
+  double *T = new double[D_Fd+1];
+
+  for (int i = 0; i <= D_Fd;i++) 
+  {
+    T[i] = i / ((double)D_Fd);
+  }
+
+//  std::fill_n(T, 2500001, 1 / Fd);
 
   std::fstream signalData("Signal.txt", std::ios_base::in);
 

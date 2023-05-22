@@ -7,7 +7,7 @@ mz=2;                          % zero padding multiplier - limited by the speed 
     %% Input signal (generate , or load from file)
 FftL=Tm*Fd*mz;                  % number of FFT samples
 T=0:1/Fd:Tm;                    % array of timings
-[ An ] = tone_gener( T );       % input matrix generation
+%[ An ] = tone_gener( T );       % input matrix generation
 Signal=readmatrix('Signal.txt'); % load input signal matrix
 
 [ Out,FftS ] = main_scanner( Tm, Fd, mz, FftL, T, Signal ); % function to compile to C

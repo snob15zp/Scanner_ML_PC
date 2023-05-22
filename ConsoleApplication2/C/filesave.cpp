@@ -6,7 +6,17 @@
 
 #include "globalconst.h"
 
-void filesave(const double *data, int  size1,int size2, char* path, char *filename, int t)
+void filesave_cpp(const double *data, int size1, int size2, char *path,
+                  char *filename, int t);
+
+
+extern "C" void filesave(const double *data, int size1, int size2, char *path,
+              char *filename, int t)
+{
+  filesave_cpp(data, size1, size2, path, filename, t);
+}
+
+void filesave_cpp (const double *data, int  size1,int size2, char* path, char *filename, int t)
 {
     std::string FullFileName;
     //FullFileName=std::string(path);
@@ -60,7 +70,14 @@ void filesave(const double *data, int  size1,int size2, char* path, char *filena
     f.close();
 }
 
-void filecomp(char* path, char *filename1)
+void filecomp_cpp(char *path, char *filename1);
+
+extern "C" void filecomp(char *path, char *filename1)
+{
+  filecomp_cpp(path, filename1);
+}
+
+void filecomp_cpp(char* path, char *filename1)
 {
 #ifdef DebugCheckData
 std::string FullFileName1;
